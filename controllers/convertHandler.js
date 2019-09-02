@@ -7,7 +7,6 @@
 */
 
 function ConvertHandler() {  
-  let test1 = "324lbs";
   const extractChars = /[A-Za-z]+$/;
   
   this.getNum = function(input) {
