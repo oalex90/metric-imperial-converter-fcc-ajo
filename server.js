@@ -12,20 +12,7 @@ var runner            = require('./test-runner');
 
 var app = express();
 
-app.use(helmet({
-  frameguard: {
-    action: 'deny'
-  },
-  contentSecurityPolicy: {
-    directives: {
-      defaultSrc: ["'self'"],
-      scriptSrc: ["'self'", 'trusted-cdn.com']
-    }
-  }
-  
-}));
-
-app.use('/public', express.static(process.cwd() + '/public'));
+app.use(helmet());
 
 app.use(cors({origin: '*'})); //For FCC testing purposes only
 
